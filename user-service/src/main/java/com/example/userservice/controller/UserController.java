@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
-@RequestMapping("/")
+@RequestMapping("/user-service")
 @RestController
 public class UserController {
     private final Environment env;
@@ -23,7 +23,8 @@ public class UserController {
     @GetMapping("/health_check")
     @Timed(value = "users.status", longTask = true)
     public String status() {
-        return "[UserController.status] It's working!";
+        return String.format("[UserController.status] It's working!\n" +
+                "port: %s", env.getProperty("local.server.port"));
     }
 
     @PostMapping("/users")
