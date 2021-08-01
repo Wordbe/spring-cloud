@@ -1,6 +1,7 @@
 package com.example.userservice.controller;
 
 import com.example.userservice.dto.UserDto;
+import com.example.userservice.jpa.UserEntity;
 import com.example.userservice.service.UserService;
 import com.example.userservice.util.ModelMapperUtils;
 import com.example.userservice.vo.RequestUser;
@@ -11,6 +12,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @RequestMapping("/user-service")
@@ -34,5 +38,21 @@ public class UserController {
 
         ResponseUser responseUser = modelMapperUtils.mapper().map(userDto, ResponseUser.class);
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
+    }
+
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<ResponseUser> getUser(@PathVariable("userId") String userId) {
+        UserDto userDto = userService.getUserById(userId);
+        ResponseUser responseUser = modelMapperUtils.mapper().map(userDto, ResponseUser.class);
+        return ResponseEntity.status(HttpStatus.OK).body(responseUser);
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<ResponseUser>> getUsers() {
+        List<UserEntity> allUsers = (List<UserEntity>) userService.getAllUsers();
+        return ResponseEntity.status(HttpStatus.OK).body(
+                allUsers.stream().map(userEntity ->
+                        modelMapperUtils.mapper().map(userEntity, ResponseUser.class)
+                ).collect(Collectors.toList()));
     }
 }
