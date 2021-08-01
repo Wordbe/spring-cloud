@@ -1,0 +1,50 @@
+server:
+  port: 8000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: apigateway-service
+  cloud:
+    gateway:
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: 글로벌 필터 기본 메시지
+            preLogger: true
+            postLogger: true
+      routes:
+        - id: first-service
+          uri: lb://ZULL-FIRST-SERVICE
+          predicates:
+            - Path=/first-service/**
+          filters:
+#            - AddRequestHeader=first-request, first-request-headerYML
+#            - AddResponseHeader=first-response, first-response-headerYML
+            - CustomFilter
+        - id: second-service
+          uri: lb://ZUUL-SECOND-SERVICE
+          predicates:
+            - Path=/second-service/**
+          filters:
+#            - AddRequestHeader=second-request, second-request-headerYML
+#            - AddResponseHeader=second-response, second-response-headerYML
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: 로깅 필터 기본 메시지
+                preLogger: true
+                postLogger: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, busrefresh, info, metrics, prometheus
