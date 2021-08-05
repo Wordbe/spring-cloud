@@ -24,6 +24,14 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
+logging:
+  level:
+    com.example.userservice: DEBUG
+
+token:
+  expiration_time: 86400000 # 60 * 60 * 24 * 1000 (ms) = 1일
+  secret: usertokensecret
+
 management:
   endpoints:
     web:

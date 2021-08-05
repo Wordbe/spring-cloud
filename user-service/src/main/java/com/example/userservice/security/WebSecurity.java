@@ -20,8 +20,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
 //        http.authorizeRequests().antMatchers("/users/**").permitAll();
-        http.authorizeRequests().antMatchers("/**")
-                .hasIpAddress("192.168.35.8")
+        http.authorizeRequests()
+                .antMatchers("/**")
+                .hasIpAddress("192.168.35.32") // 동적 IP: 8 -> 32
                 .and()
                 .addFilter(getAuthenticationFilter());
 
