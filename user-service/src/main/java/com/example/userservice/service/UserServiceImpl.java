@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -52,6 +53,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public Iterable<UserEntity> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public UserDto getUserDetailByEmail(String email) {
+        UserEntity userEntity = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException(email));
+
+        return modelMapperUtils.mapper().map(userEntity, UserDto.class);
     }
 
     @Override
