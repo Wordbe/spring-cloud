@@ -27,8 +27,11 @@ public class UserController {
     @GetMapping("/health_check")
     @Timed(value = "users.status", longTask = true)
     public String status() {
-        return String.format("[UserController.status] It's working!\n" +
-                "port: %s", env.getProperty("local.server.port"));
+        return String.format("[UserController.status] 정상 작동합니다."
+                + "\nport(local.server.port)= " + env.getProperty("local.server.port")
+                + "\nport(server.port)= " + env.getProperty("server.port")
+                + "\ntoken.secret= " + env.getProperty("token.secret")
+                + "\ntoken.expiration_time= " + env.getProperty("token.expiration_time"));
     }
 
     @PostMapping("/users")
