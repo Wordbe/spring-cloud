@@ -21,14 +21,7 @@ spring:
             preLogger: true
             postLogger: true
       routes:
-        - id: user-service
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/user-service/login
-            - Method=POST
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment} # /user-service/login -> /login 으로 호출
+        # user-service > 회원가입
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -37,6 +30,28 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
+        # user-service > 로그인
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/login
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment} # /user-service/login -> /login 으로 호출
+
+        # user-service > actuator
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/actuator/**
+            - Method=GET,POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
+        # 그 외 user-service
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -47,6 +62,7 @@ spring:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - AuthorizationHeaderFilter
 
+
         - id: catalog-service
           uri: lb://CATALOG-SERVICE
           predicates:
@@ -55,6 +71,9 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order-service/**
+
+
+
 
         - id: first-service
           uri: lb://ZULL-FIRST-SERVICE
@@ -78,11 +97,11 @@ spring:
                 preLogger: true
                 postLogger: true
 
-token:
-  secret: usertokensecret
+#token:
+#  secret: usertokensecret
 
 management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans, busrefresh, info, metrics, prometheus
+        include: refresh, health, beans, httptrace, busrefresh, info, metrics, prometheus
