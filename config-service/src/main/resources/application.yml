@@ -4,14 +4,27 @@ server:
 spring:
   application:
     name: config-service
-#  profiles:
-#    active: native
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+  profiles:
+    active: native
   cloud:
     config:
       server:
-#        native:
-#          search-locations: file://${user.home}/rdiforest/workspace/configrepo
+        native:
+          search-locations: file://${user.home}/rdiforest/workspace/configrepo
         git:
 #          uri: file:///Users/rdijin/rdiforest/workspace/configrepo
           uri: https://github.com/Wordbe/spring-cloud-config
           default-label: main
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
