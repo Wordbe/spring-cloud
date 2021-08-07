@@ -8,4 +8,6 @@ spring:
     config:
       server:
         git:
-          uri: file:///Users/rdijin/rdiforest/workspace/configrepo
+#          uri: file:///Users/rdijin/rdiforest/workspace/configrepo
+          uri: https://github.com/Wordbe/spring-cloud-config
+          default-label: main
