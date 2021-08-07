@@ -17,7 +17,7 @@ spring:
     config:
       server:
         native:
-          search-locations: file://${user.home}/rdiforest/workspace/configrepo
+          search-locations: file://${user.home}/rdiforest/workspace/configrepo/native
         git:
 #          uri: file:///Users/rdijin/rdiforest/workspace/configrepo
           uri: https://github.com/Wordbe/spring-cloud-config
