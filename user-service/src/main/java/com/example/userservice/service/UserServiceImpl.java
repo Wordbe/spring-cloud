@@ -1,5 +1,6 @@
 package com.example.userservice.service;
 
+import com.example.userservice.client.OrderServiceClient;
 import com.example.userservice.dto.UserDto;
 import com.example.userservice.jpa.UserEntity;
 import com.example.userservice.jpa.UserRepository;
@@ -32,6 +33,7 @@ public class UserServiceImpl implements UserService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final RestTemplate restTemplate;
     private final Environment env;
+    private final OrderServiceClient orderServiceClient;
 
     @Override
     public UserDto createUser(UserDto userDto) {
@@ -51,15 +53,16 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UsernameNotFoundException("해당 ID의 사용자를 찾을 수 없습니다."));
         UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
 
-        String orderUrl = String.format(env.getProperty("order_service.url"), userId);
-        ResponseEntity<List<ResponseOrder>> orderListResponse =
-                restTemplate.exchange(
-                        orderUrl,
-                        HttpMethod.GET,
-                        null,
-                        new ParameterizedTypeReference<>() {}
-                );
-        List<ResponseOrder> orders = orderListResponse.getBody();
+//        String orderUrl = String.format(env.getProperty("order_service.url"), userId);
+//        ResponseEntity<List<ResponseOrder>> orderListResponse =
+//                restTemplate.exchange(
+//                        orderUrl,
+//                        HttpMethod.GET,
+//                        null,
+//                        new ParameterizedTypeReference<>() {}
+//                );
+//        List<ResponseOrder> orders = orderListResponse.getBody();
+        List<ResponseOrder> orders = orderServiceClient.getOrders(userId);
         userDto.setOrders(orders);
 
         return userDto;
