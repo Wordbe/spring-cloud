@@ -1,6 +1,6 @@
 server:
-  #  port: 0 # 임의 포트 번호
-  port: 8093
+  port: 0 # 임의 포트 번호
+#  port: 8093
 
 spring:
   application:
