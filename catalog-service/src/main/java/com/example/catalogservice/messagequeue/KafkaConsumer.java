@@ -33,7 +33,7 @@ public class KafkaConsumer {
 
         CatalogEntity catalogEntity = catalogRepository.findByProductId((String) map.get("productId"));
         if (catalogEntity != null) {
-            catalogEntity.minusStock((Integer) map.get("quantty"));
+            catalogEntity.minusStock((Integer) map.get("quantity"));
         }
     }
 }

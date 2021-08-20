@@ -42,7 +42,7 @@ public class OrderController {
 
         ResponseOrder responseOrder = modelMapperUtils.mapper().map(createdOrder, ResponseOrder.class);
 
-        kafkaProducer.send("category-service", orderDto);
+        kafkaProducer.send("catalog-topic", orderDto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseOrder);
     }
