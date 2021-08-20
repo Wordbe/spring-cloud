@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 
@@ -19,6 +20,7 @@ public class KafkaConsumer {
     private final CatalogRepository catalogRepository;
 
     @KafkaListener(topics = "catalog-topic")
+    @Transactional
     public void updateQuantity(String kafkaMessage) {
         log.info("카프카 메시지: " + kafkaMessage);
 
