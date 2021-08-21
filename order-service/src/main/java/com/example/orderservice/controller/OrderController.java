@@ -3,6 +3,7 @@ package com.example.orderservice.controller;
 import com.example.orderservice.dto.OrderDto;
 import com.example.orderservice.jpa.OrderEntity;
 import com.example.orderservice.messagequeue.KafkaProducer;
+import com.example.orderservice.messagequeue.OrderProducer;
 import com.example.orderservice.service.OrderService;
 import com.example.orderservice.util.ModelMapperUtils;
 import com.example.orderservice.vo.RequestOrder;
@@ -15,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -25,6 +27,7 @@ public class OrderController {
     private final OrderService orderService;
     private final ModelMapperUtils modelMapperUtils;
     private final KafkaProducer kafkaProducer;
+    private final OrderProducer orderProducer;
 
     @GetMapping("/health_check")
     public String status() {
@@ -33,14 +36,21 @@ public class OrderController {
     }
 
     @PostMapping("/{userId}/orders")
-    public ResponseEntity<ResponseOrder> createUser(
+    public ResponseEntity<ResponseOrder> createOrder(
             @PathVariable("userId") String userId,
             @RequestBody RequestOrder orderDetails) {
         OrderDto orderDto =  modelMapperUtils.mapper().map(orderDetails, OrderDto.class);
         orderDto.setUserId(userId);
-        OrderDto createdOrder = orderService.createOrder(orderDto);
 
-        ResponseOrder responseOrder = modelMapperUtils.mapper().map(createdOrder, ResponseOrder.class);
+        // JPA 로 주문 생성
+//        OrderDto createdOrder = orderService.createOrder(orderDto);
+//        ResponseOrder responseOrder = modelMapperUtils.mapper().map(createdOrder, ResponseOrder.class);
+
+        // Kafka Topic 으로 주문 생성
+        orderDto.setOrderId(UUID.randomUUID().toString());
+        orderDto.setTotalPrice(orderDetails.getQuantity() * orderDetails.getUnitPrice());
+        ResponseOrder responseOrder = modelMapperUtils.mapper().map(orderDto, ResponseOrder.class);
+        orderProducer.send("orders", orderDto);
 
         kafkaProducer.send("catalog-topic", orderDto);
 
