@@ -43,16 +43,16 @@ public class OrderController {
         orderDto.setUserId(userId);
 
         // JPA 로 주문 생성
-//        OrderDto createdOrder = orderService.createOrder(orderDto);
-//        ResponseOrder responseOrder = modelMapperUtils.mapper().map(createdOrder, ResponseOrder.class);
+        OrderDto createdOrder = orderService.createOrder(orderDto);
+        ResponseOrder responseOrder = modelMapperUtils.mapper().map(createdOrder, ResponseOrder.class);
 
         // Kafka Topic 으로 주문 생성
-        orderDto.setOrderId(UUID.randomUUID().toString());
-        orderDto.setTotalPrice(orderDetails.getQuantity() * orderDetails.getUnitPrice());
-        ResponseOrder responseOrder = modelMapperUtils.mapper().map(orderDto, ResponseOrder.class);
-        orderProducer.send("orders", orderDto);
+//        orderDto.setOrderId(UUID.randomUUID().toString());
+//        orderDto.setTotalPrice(orderDetails.getQuantity() * orderDetails.getUnitPrice());
+//        ResponseOrder responseOrder = modelMapperUtils.mapper().map(orderDto, ResponseOrder.class);
+//        orderProducer.send("orders", orderDto);
 
-        kafkaProducer.send("catalog-topic", orderDto);
+//        kafkaProducer.send("catalog-topic", orderDto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseOrder);
     }
