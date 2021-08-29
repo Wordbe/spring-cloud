@@ -1,0 +1,31 @@
+2021-03-27 15:43:47 0 [Warning] InnoDB: innodb_open_files 300 should not be greater than the open_files_limit 256
+2021-03-27 15:43:47 0 [Note] InnoDB: Uses event mutexes
+2021-03-27 15:43:47 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-03-27 15:43:47 0 [Note] InnoDB: Number of pools: 1
+2021-03-27 15:43:47 0 [Note] InnoDB: Using SSE4.2 crc32 instructions
+2021-03-27 15:43:47 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+2021-03-27 15:43:47 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-03-27 15:43:49 0 [Note] InnoDB: 128 rollback segments are active.
+2021-03-27 15:43:49 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-03-27 15:43:49 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-03-27 15:43:49 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+2021-03-27 15:43:49 0 [Note] InnoDB: 10.5.6 started; log sequence number 2718979; transaction id 1265
+2021-03-27 15:43:49 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-03-27 15:43:49 0 [Note] InnoDB: Loading buffer pool(s) from /usr/local/var/mysql/ib_buffer_pool
+2021-03-27 15:43:49 0 [Note] InnoDB: Buffer pool(s) load completed at 210327 15:43:49
+2021-03-27 15:43:49 0 [Note] Server socket created on IP: '::'.
+2021-03-27 15:43:49 0 [Note] Reading of all Master_info entries succeeded
+2021-03-27 15:43:49 0 [Note] Added new Master_info '' to hash table
+2021-03-27 15:43:49 0 [Note] /usr/local/opt/mariadb/bin/mariadbd: ready for connections.
+Version: '10.5.6-MariaDB'  socket: '/tmp/mysql.sock'  port: 3306  Homebrew
+2021-06-09 22:11:14 644 [Warning] Aborted connection 644 to db: 'segansig' user: 'rdijin' host: 'localhost' (Got an error reading communication packets)
+2021-06-12 14:52:02 0 [Note] /usr/local/opt/mariadb/bin/mariadbd (initiated by: unknown): Normal shutdown
+2021-06-12 14:52:02 0 [Note] Event Scheduler: Purging the queue. 0 events
+2021-06-12 14:52:02 0 [Note] InnoDB: FTS optimize thread exiting.
+2021-06-12 14:52:02 0 [Note] InnoDB: Starting shutdown...
+2021-06-12 14:52:02 0 [Note] InnoDB: Dumping buffer pool(s) to /usr/local/var/mysql/ib_buffer_pool
+2021-06-12 14:52:02 0 [Note] InnoDB: Buffer pool(s) dump completed at 210612 14:52:02
+2021-06-12 14:52:03 0 [Note] InnoDB: Shutdown completed; log sequence number 3699896; transaction id 2911
+2021-06-12 14:52:03 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2021-06-12 14:52:03 0 [Note] /usr/local/opt/mariadb/bin/mariadbd: Shutdown complete
+

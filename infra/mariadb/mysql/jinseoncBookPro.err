@@ -1,0 +1,93 @@
+2020-09-30 17:30:57 0 [ERROR] mariadbd: Can't lock aria control file '/usr/local/var/mysql/aria_log_control' for exclusive use, error: 35. Will retry for 30 seconds
+2020-09-30 17:30:58 0 [Warning] InnoDB: innodb_open_files 300 should not be greater than the open_files_limit 256
+2020-09-30 17:30:58 0 [Note] InnoDB: Uses event mutexes
+2020-09-30 17:30:58 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2020-09-30 17:30:58 0 [Note] InnoDB: Number of pools: 1
+2020-09-30 17:30:58 0 [Note] InnoDB: Using SSE4.2 crc32 instructions
+2020-09-30 17:30:58 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+2020-09-30 17:30:58 0 [Note] InnoDB: Completed initialization of buffer pool
+2020-09-30 17:30:58 0 [Note] InnoDB: 128 rollback segments are active.
+2020-09-30 17:30:58 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2020-09-30 17:30:58 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2020-09-30 17:30:58 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+2020-09-30 17:30:58 0 [Note] InnoDB: 10.5.5 started; log sequence number 50749; transaction id 49
+2020-09-30 17:30:58 0 [Note] Plugin 'FEEDBACK' is disabled.
+2020-09-30 17:30:58 0 [Note] InnoDB: Loading buffer pool(s) from /usr/local/var/mysql/ib_buffer_pool
+2020-09-30 17:30:58 0 [Note] InnoDB: Buffer pool(s) load completed at 200930 17:30:58
+2020-09-30 17:30:58 0 [Note] Server socket created on IP: '::'.
+2020-09-30 17:30:58 0 [Note] Reading of all Master_info entries succeeded
+2020-09-30 17:30:58 0 [Note] Added new Master_info '' to hash table
+2020-09-30 17:30:58 0 [Note] /usr/local/opt/mariadb/bin/mariadbd: ready for connections.
+Version: '10.5.5-MariaDB'  socket: '/tmp/mysql.sock'  port: 3306  Homebrew
+2020-09-30 17:31:10 3 [Warning] Access denied for user 'rdijin'@'localhost' to database '0918'
+2020-09-30 17:31:56 5 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:31:56 6 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:31:57 7 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:32:27 8 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:32:27 9 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:32:27 10 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:35:05 11 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:35:05 12 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:35:05 13 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:37:10 14 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:37:29 16 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:41:15 18 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:41:15 19 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:41:15 20 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:42:13 21 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:42:13 22 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:42:13 23 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:55:53 24 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:55:53 25 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:55:53 26 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:57:31 27 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:57:32 28 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:57:32 29 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 17:58:05 30 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 17:58:10 31 [Warning] Access denied for user 'root'@'localhost'
+2020-09-30 18:04:51 34 [Warning] Access denied for user 'rdijin'@'localhost' (using password: NO)
+2020-09-30 18:04:57 35 [Warning] Access denied for user 'rdijin'@'localhost' (using password: YES)
+2020-09-30 19:11:15 37 [Warning] Aborted connection 37 to db: 'segansig' user: 'rdijin' host: 'localhost' (Got an error reading communication packets)
+2020-09-30 19:11:56 38 [Warning] Aborted connection 38 to db: 'segansig' user: 'rdijin' host: 'localhost' (Got an error reading communication packets)
+2020-10-01  3:37:45 0 [Note] /usr/local/opt/mariadb/bin/mariadbd (initiated by: unknown): Normal shutdown
+2020-10-01  3:37:45 0 [Note] Event Scheduler: Purging the queue. 0 events
+2020-10-01  3:37:45 0 [Note] InnoDB: FTS optimize thread exiting.
+2020-10-01  3:37:45 0 [Note] InnoDB: Starting shutdown...
+2020-10-01  3:37:45 0 [Note] InnoDB: Dumping buffer pool(s) to /usr/local/var/mysql/ib_buffer_pool
+2020-10-01  3:37:45 0 [Note] InnoDB: Buffer pool(s) dump completed at 201001  3:37:45
+2020-10-01  3:37:46 0 [Note] InnoDB: Shutdown completed; log sequence number 50761; transaction id 51
+2020-10-01  3:37:46 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2020-10-01  3:37:46 0 [Note] /usr/local/opt/mariadb/bin/mariadbd: Shutdown complete
+
+2021-01-19 10:37:47 0 [Warning] InnoDB: innodb_open_files 300 should not be greater than the open_files_limit 256
+2021-01-19 10:37:47 0 [Note] InnoDB: Uses event mutexes
+2021-01-19 10:37:47 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-01-19 10:37:47 0 [Note] InnoDB: Number of pools: 1
+2021-01-19 10:37:47 0 [Note] InnoDB: Using SSE4.2 crc32 instructions
+2021-01-19 10:37:47 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+2021-01-19 10:37:47 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-01-19 10:37:47 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=2715669
+2021-01-19 10:37:48 0 [Note] InnoDB: 128 rollback segments are active.
+2021-01-19 10:37:48 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2021-01-19 10:37:48 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-01-19 10:37:48 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-01-19 10:37:48 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+2021-01-19 10:37:48 0 [Note] InnoDB: 10.5.6 started; log sequence number 2715681; transaction id 1244
+2021-01-19 10:37:48 0 [Note] InnoDB: Loading buffer pool(s) from /usr/local/var/mysql/ib_buffer_pool
+2021-01-19 10:37:48 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-01-19 10:37:48 0 [Note] InnoDB: Buffer pool(s) load completed at 210119 10:37:48
+2021-01-19 10:37:48 0 [Note] Server socket created on IP: '::'.
+2021-01-19 10:37:48 0 [Note] Reading of all Master_info entries succeeded
+2021-01-19 10:37:48 0 [Note] Added new Master_info '' to hash table
+2021-01-19 10:37:48 0 [Note] /usr/local/opt/mariadb/bin/mariadbd: ready for connections.
+Version: '10.5.6-MariaDB'  socket: '/tmp/mysql.sock'  port: 3306  Homebrew
+2021-01-19 10:39:43 0 [Note] /usr/local/opt/mariadb/bin/mariadbd (initiated by: unknown): Normal shutdown
+2021-01-19 10:39:43 0 [Note] Event Scheduler: Purging the queue. 0 events
+2021-01-19 10:39:43 0 [Note] InnoDB: FTS optimize thread exiting.
+2021-01-19 10:39:43 0 [Note] InnoDB: Starting shutdown...
+2021-01-19 10:39:43 0 [Note] InnoDB: Dumping buffer pool(s) to /usr/local/var/mysql/ib_buffer_pool
+2021-01-19 10:39:43 0 [Note] InnoDB: Buffer pool(s) dump completed at 210119 10:39:43
+2021-01-19 10:39:44 0 [Note] InnoDB: Shutdown completed; log sequence number 2715705; transaction id 1245
+2021-01-19 10:39:44 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2021-01-19 10:39:44 0 [Note] /usr/local/opt/mariadb/bin/mariadbd: Shutdown complete
+
